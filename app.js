@@ -197,7 +197,9 @@
                         return fact;
                     }();
                 } else fact = dinoArray[randomEle].fact;
-                ele.innerHTML = `<h3>${dinoArray[randomEle].species}</h3><img src="images/${dinoArray[randomEle].species.toLowerCase()}.png" alt="image of ${dinoArray[randomEle].species}"><p>${fact}</p>`;
+                let species = (dinoArray[randomEle].species).toLowerCase();
+                console.log(species);
+                ele.innerHTML = `<h3>${dinoArray[randomEle].species}</h3><img src="images/${species}.png" alt="image of ${dinoArray[randomEle].species}"><p>${fact}</p>`;
                 gridEle.appendChild(ele);
             }
         }
