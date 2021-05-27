@@ -84,13 +84,8 @@
         humanObj.Dinos.forEach(Dinos => {
             dinoArray.push(new dinoContructor(Dinos));
         });
-        //console.log(dinoArray);
-        let dinoArrayLength = dinoArray.length;
-       // console.log(dinoArrayLength);
         let dinoArrayMiddle = (dinoArray.length)/2;
-       // console.log(dinoArrayMiddle);
         dinoArray.splice(dinoArrayMiddle, 0, 'Human');
-       // console.log(dinoArray);
         return dinoArray;
     }
 
@@ -170,7 +165,7 @@
                 const gridEle = document.getElementById('grid');
                 const ele = document.createElement('div');
                 ele.className = 'grid-item';
-                ele.innerHTML = `<h3>${dinoArray[i].species}</h3><img src="images/${dinoArray[i].species}.png" alt="image of ${dinoArray[i].species}"><p>${dinoArray[i].fact}</p>`;
+                ele.innerHTML = `<h3>${dinoArray[i].species}</h3><img src="images/${dinoArray[i].species.toLowerCase()}.png" alt="image of ${dinoArray[i].species}"><p>${dinoArray[i].fact}</p>`;
                 gridEle.appendChild(ele);
             }else{
                 const gridEle = document.getElementById('grid');
@@ -202,7 +197,7 @@
                         return fact;
                     }();
                 } else fact = dinoArray[randomEle].fact;
-                ele.innerHTML = `<h3>${dinoArray[randomEle].species}</h3><img src="images/${dinoArray[randomEle].species}.png" alt="image of ${dinoArray[randomEle].species}"><p>${fact}</p>`;
+                ele.innerHTML = `<h3>${dinoArray[randomEle].species}</h3><img src="images/${dinoArray[randomEle].species.toLowerCase()}.png" alt="image of ${dinoArray[randomEle].species}"><p>${fact}</p>`;
                 gridEle.appendChild(ele);
             }
         }
